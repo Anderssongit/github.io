@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Free Website</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container">
+      <h1 class="logo">My Free Site</h1>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#upload">Upload</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="container">
+      <h2>Welcome to My Free Website!</h2>
+      <p>This is an example site where you can share your thoughts, images, or any content you desire.</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2>About This Site</h2>
+      <p>This website is built using GitHub Pages and is entirely free. It demonstrates how you can create and deploy a webpage at no cost.</p>
+      <p>Feel free to replace this text and customize the site to match your personal style or business identity.</p>
+    </div>
+  </section>
+
+  <!-- UPLOAD SECTION (Example) -->
+  <section id="upload">
+    <div class="container">
+      <h2>Upload Your Content</h2>
+      <p>Use the form below to choose a file from your computer. (Note: Processing file uploads requires server-side code; this form is for demonstration purposes.)</p>
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="fileUpload">Choose a file:</label>
+        <input type="file" name="fileUpload" id="fileUpload">
+        <input type="submit" value="Upload File">
+      </form>
+      <p class="note">* This demo form will not process uploads without a server-side script.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to collaborate? Email us at <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Free Website. All Rights Reserved.</p>
+      <p><small>Designed as a free template. Customize it and make it your own!</small></p>
+    </div>
+  </footer>
+</body>
+</html>
