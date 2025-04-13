@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* styles.css */
 * {
   margin: 0;
   padding: 0;
@@ -8,47 +8,34 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  color: #24292e;
-  background-color: #ffffff;
+  color: #FFD700; /* Gold text */
+  background-color: #0a0a0a; /* Dark black */
 }
 
 /* Header Styles */
 header {
-  background-color: #24292e;
+  background-color: #000000; /* Pure black */
   padding: 1rem 0;
-  border-bottom: 1px solid #e1e4e8;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-bottom: 1px solid #333333; /* Dark grey border */
 }
 
 .logo {
-  color: #ffffff;
+  color: #FFD700; /* Gold */
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-nav ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
 nav a {
-  color: #ffffff;
+  color: #FFD700 !important; /* Gold links */
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  transition: opacity 0.3s;
 }
 
 nav a:hover {
-  color: #58a6ff;
+  opacity: 0.8;
 }
 
-/* Main Content Layout */
+/* Main Layout */
 main {
   display: flex;
   gap: 2rem;
@@ -57,56 +44,49 @@ main {
   padding: 0 1rem;
 }
 
-/* Sidebar Navigation */
+/* Sidebar */
 .sidebar {
   width: 240px;
-  flex-shrink: 0;
-  border-right: 1px solid #e1e4e8;
-  padding-right: 1rem;
-}
-
-.sidebar nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  background-color: #1a1a1a; /* Dark grey */
+  padding: 1rem;
+  border-right: 1px solid #333333;
 }
 
 .sidebar nav a {
-  color: #24292e;
+  color: #FFD700 !important;
+  display: block;
   padding: 0.5rem;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .sidebar nav a:hover {
-  background-color: #f6f8fa;
+  background-color: #333333; /* Medium grey */
 }
 
 /* Content Sections */
 .content {
   flex-grow: 1;
-  max-width: 800px;
-  padding: 0 2rem;
 }
 
 .section {
-  margin-bottom: 3rem;
+  background-color: #1a1a1a; /* Dark grey */
+  border: 1px solid #333333;
+  border-radius: 8px;
   padding: 2rem;
-  background-color: #ffffff;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin-bottom: 2rem;
 }
 
 .section h2 {
-  color: #24292e;
+  color: #FFD700;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 1rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #e1e4e8;
 }
 
-/* Code-like Blocks */
+/* Code Blocks */
 .code-block {
-  background-color: #f6f8fa;
+  background-color: #000000; /* Pure black */
+  color: #FFD700;
   padding: 1rem;
   border-radius: 6px;
   font-family: monospace;
@@ -115,37 +95,45 @@ main {
 
 /* Form Styling */
 form {
-  background-color: #f6f8fa;
+  background-color: #1a1a1a;
   padding: 2rem;
-  border-radius: 6px;
-  margin-top: 1rem;
-}
-
-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  border-radius: 8px;
 }
 
 form input[type="file"] {
-  width: 100%;
-  margin-bottom: 1rem;
+  background-color: #000000;
+  color: #FFD700;
+  border: 1px solid #333333;
   padding: 0.5rem;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+form input[type="submit"] {
+  background-color: #FFD700;
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+form input[type="submit"]:hover {
+  opacity: 0.9;
 }
 
 /* Footer */
 footer {
-  background-color: #f6f8fa;
-  color: #6a737d;
+  background-color: #000000;
+  border-top: 1px solid #333333;
   padding: 2rem 0;
   margin-top: 3rem;
-  border-top: 1px solid #e1e4e8;
 }
 
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+footer p {
+  color: #FFD700;
+}
+
+footer a {
+  color: #FFD700 !important;
 }
