@@ -24,25 +24,37 @@
 
   <main>
     <div class="content">
-      <!-- Existing sections remain the same -->
+      <section id="quickstart" class="section">
+        <!-- Your existing quickstart content -->
+      </section>
+
+      <section id="introduction" class="section">
+        <!-- Your existing introduction content -->
+        
+        <!-- Add stock widget here -->
+        <div class="stock-widget">
+          <h3 class="gold-header">DNB Stock Price</h3>
+          <div class="stock-info">
+            <p>Current Price: <span id="stock-price">Loading...</span></p>
+            <p>Currency: <span id="stock-currency">NOK</span></p>
+            <p>Last Updated: <span id="stock-updated">-</span></p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
   <script>
-    // Date and week number display
+    // Date and week number
     function updateDynamicData() {
       const dateElement = document.getElementById('current-date');
       const today = new Date();
-      
-      // Date formatting
       const options = { 
         weekday: 'long', 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
       };
-      
-      // Week number calculation
       const startDate = new Date(today.getFullYear(), 0, 1);
       const days = Math.floor((today - startDate) / (24 * 60 * 60 * 1000));
       const weekNumber = Math.ceil((days + startDate.getDay() + 1) / 7);
@@ -53,11 +65,37 @@
       `;
     }
 
-    // Initial call
+    // Stock price fetcher
+    async function fetchDNBStock() {
+      try {
+        const response = await fetch(
+          `https://api.allorigins.win/get?url=${encodeURIComponent(
+            'https://query1.finance.yahoo.com/v8/finance/chart/DNB.OL'
+          )}`
+        );
+        
+        const { contents } = await response.json();
+        const data = JSON.parse(contents);
+        
+        const price = data.chart.result[0].meta.regularMarketPrice.toFixed(2);
+        const updated = new Date(data.chart.result[0].meta.regularMarketTime * 1000);
+
+        document.getElementById('stock-price').textContent = `${price} NOK`;
+        document.getElementById('stock-updated').textContent = 
+          updated.toLocaleTimeString('no-NO');
+      } catch (error) {
+        console.error('Error fetching stock data:', error);
+        document.getElementById('stock-price').textContent = 'Price unavailable';
+      }
+    }
+
+    // Initial calls
     updateDynamicData();
+    fetchDNBStock();
     
-    // Update every minute (optional)
+    // Update every 2 minutes
     setInterval(updateDynamicData, 60000);
+    setInterval(fetchDNBStock, 120000);
   </script>
 </body>
 </html>
