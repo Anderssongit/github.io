@@ -9,7 +9,10 @@
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">GitHub Pages</h1>
+      <div class="header-content">
+        <h1 class="logo">GitHub Pages</h1>
+        <div id="current-date" class="date-display"></div>
+      </div>
       <nav>
         <ul>
           <li><a href="#quickstart">Quickstart</a></li>
@@ -22,8 +25,10 @@
   <main>
     <div class="content">
       <section id="quickstart" class="section">
-        <h2>Quickstart for GitHub Pages</h2>
-        <p class="gold-text">You can use GitHub Pages to showcase some open source projects, host a blog, or even share your résumé.</p>
+        <div class="section-header">
+          <h2>Quickstart for GitHub Pages</h2>
+          <p class="gold-text">You can use GitHub Pages to showcase some open source projects, host a blog, or even share your résumé.</p>
+        </div>
         
         <div class="feature-list">
           <h3 class="gold-header">Who can use this feature?</h3>
@@ -35,14 +40,16 @@
         </div>
 
         <div class="code-block">
-          <p># Bypass Jekyll build</p>
-          <p>$ touch .nojekyll</p>
+          <pre><code># Bypass Jekyll build
+$ touch .nojekyll</code></pre>
         </div>
       </section>
 
       <section id="introduction" class="section">
-        <h2>Introduction</h2>
-        <p class="gold-text">Create a user site at <a href="#" class="gold-link">username.github.io</a></p>
+        <div class="section-header">
+          <h2>Introduction</h2>
+          <p class="gold-text">Create a user site at <a href="#" class="gold-link">username.github.io</a></p>
+        </div>
         
         <div class="repo-creation">
           <h3 class="gold-header">Creating your website</h3>
@@ -58,5 +65,12 @@
       </section>
     </div>
   </main>
+
+  <script>
+    // Display current date
+    const dateElement = document.getElementById('current-date');
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = new Date().toLocaleDateString('en-US', options);
+  </script>
 </body>
 </html>
