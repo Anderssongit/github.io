@@ -1,49 +1,23 @@
-:root {
-  --primary: #FFA500;  /* Changed to orange for better contrast */
-  --background: #f8f9fa;
-  --surface: #ffffff;
-  --accent: #e9ecef;
-  --text: #212529;
+.stock-widget {
+  background: var(--surface);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--accent);
 }
 
-body {
-  background-color: var(--background);
+.stock-info p {
+  margin: 0.5rem 0;
   color: var(--text);
 }
 
-header {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  background: linear-gradient(45deg, #FFA500, #FFD700);
-}
-
-.gold-text {
-  color: #6c757d;
-}
-
-.gold-header {
+#stock-price {
+  font-weight: bold;
   color: var(--primary);
-  border-bottom: 2px solid var(--accent);
+  font-size: 1.2rem;
 }
 
-.gold-list li {
-  background: var(--accent);
-  color: var(--text);
-}
-
-.code-block {
-  background: var(--accent);
-  border: 1px solid #dee2e6;
-}
-
-.repo-menu {
-  background: var(--accent);
-  border: 1px solid #dee2e6;
-}
-
-.menu-item:hover {
-  background: rgba(255, 165, 0, 0.05);
+#stock-updated {
+  font-style: italic;
+  color: #666;
 }
